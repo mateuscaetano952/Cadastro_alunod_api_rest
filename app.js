@@ -1,5 +1,8 @@
 import express, { urlencoded } from 'express';
+import dotenv from 'dotenv';
 import homeRoutes from './src/routes/homeRoutes';
+
+dotenv.config();
 
 class App {
   constructor() {
