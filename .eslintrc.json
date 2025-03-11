@@ -17,6 +17,8 @@
         "promise/no-return-in-finally": "error",
         "prefer-arrow-callback": "error",
         "linebreak-style": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "no-unused-vars": "off",
+        
     }
 }
