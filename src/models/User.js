@@ -24,7 +24,7 @@ export default class User extends Model {
           validate: {
             len: {
               args: [3, 255],
-              msg: 'Campo nome debe ter entre 3 a 255 caracteres',
+              msg: 'Campo email dever entre 3 a 255 caracteres',
             },
           },
         },
