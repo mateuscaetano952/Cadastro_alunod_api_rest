@@ -2,8 +2,10 @@ import express, { urlencoded } from 'express';
 import dotenv from 'dotenv';
 import homeRoutes from './src/routes/homeRoutes';
 import userRoutes from './src/routes/userRoutes';
+import tokenRoutes from './src/routes/tokenRoutes';
 
 import './src/database';
+import TokenController from './src/controllers/TokenController';
 
 dotenv.config();
 
@@ -22,6 +24,7 @@ class App {
   routes() {
     this.app.use(homeRoutes);
     this.app.use(userRoutes);
+    this.app.use(tokenRoutes);
   }
 }
 
