@@ -36,16 +36,16 @@ class AlunoController{
                     errors: ['Id não enviado']
                 })
             }
-
-            const aluno = Aluno.findByPk(req.params.id, {
+      
+            const aluno = await Aluno.findByPk(req.params.id, {
                 attributes: ['id', 'nome', 'sobrenome', 'idade'],
                 order : [['id', 'DESC'],[Fotos, 'filename', 'DESC']],
                 include: {
                     model: Fotos,
-                    attributes: ['filename']
+                    attributes: ['filename', 'url']
                 }
             })
-        
+
             if(!aluno){
                 return res.status(400).json({
                     errors: ['Aluno não existe']

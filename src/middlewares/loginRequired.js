@@ -1,5 +1,8 @@
 import Jwt from 'jsonwebtoken';
 import User from '../models/User';
+/**
+ * Esse middleware força a necessidade de esta logado(com um token) para acessar as rotas
+ */
 
 export default async (req, res, next) => {
     const { authorization } = req.headers;

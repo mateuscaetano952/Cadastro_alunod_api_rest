@@ -2,6 +2,10 @@ import { json } from 'sequelize';
 import User from '../models/User';
 import Jwt from 'jsonwebtoken';
 
+/**
+ * Retorna um token necessario para acessar certas rotas na aplicação
+ */
+
 class HomeController {
   async store(req, res) {
    const {email = '', password = ''} = req.body;

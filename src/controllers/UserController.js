@@ -1,5 +1,6 @@
 import { json } from 'sequelize';
 import User from '../models/User';
+/**Relacionadas ao usuario */
 
 class HomeController {
   //Criar novo usuario
@@ -14,7 +15,7 @@ class HomeController {
    }
   }
 
-  //Lista todos os usuarios
+  //Lista todos os usuarios, pra teste
   async home(req, res) {
     try{
       const users = await User.findAll({ attributes: ['nome', 'email' , 'id']});
@@ -24,7 +25,7 @@ class HomeController {
     }
   }
 
-  //Lista 1 usuario aparti do id
+  //Lista 1 usuario aparti do id, pra teste
   async show(req, res) {
     try{
       if(!req.params.id){
@@ -50,6 +51,7 @@ class HomeController {
     }
   }
 
+  //Atualizar dados do usuario
   async update(req, res){
     try{
       if(!req.userId ){
@@ -77,6 +79,7 @@ class HomeController {
     }
   }
 
+  //Deletar usuario aparti do id
   async delete(req, res){
     try{
       if(!req.userId ){
