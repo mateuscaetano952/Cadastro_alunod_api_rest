@@ -5,6 +5,7 @@ import userRoutes from './src/routes/userRoutes';
 import tokenRoutes from './src/routes/tokenRoutes';
 import alunoRoutes from './src/routes/alunoRoutes';
 import fotoRoutes from './src/routes/fotoRoutes';
+import { resolve } from 'path';
 
 import './src/database';
 import TokenController from './src/controllers/TokenController';
@@ -21,6 +22,7 @@ class App {
   middlewares() {
     this.app.use(urlencoded({ extended: true }));
     this.app.use(express.json());
+    this.app.use(express.static(resolve(__dirname, 'uploads')))
   }
 
   routes() {
